@@ -75,8 +75,12 @@
                         <RowDefinition Height="10" />
                         <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
+                    <Image Source="O:\GogolevValeriy\EntryLessons\PassGen\PassGen\Resources\Images\question.png"/>
+                    <TextBlock Grid.Row="2" Text="Надёжный"/>
+                    <Button Grid.Row="4" Content="Генерация" Width="120" Height="25"/>
                 </Grid>
-                
+
+
             </Grid>
             
         </GroupBox>
