@@ -16,7 +16,8 @@
         
         <!--#region Настройки генерации-->
 
-        <GroupBox>
+        <GroupBox Header="Настройки пароля" BorderBrush="Black">
+            
             <Grid ShowGridLines="True">
                 
                 
@@ -44,6 +45,26 @@
                         <RowDefinition Height="10" />
                         
                     </Grid.RowDefinitions>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Длина пароля"/>
+                        <Separator Width="10" Height="0"/>
+                        <Slider Minimum="3" Maximum="32" Width="100" />
+                        <Separator Width="10" Height="0"/>
+                        <TextBox Width="30"/>
+                    </StackPanel>
+
+                    <CheckBox Grid.Row="2" Content="Цифры"/>
+                    <CheckBox Grid.Row="4" Content="Символы"/>
+                    <CheckBox Grid.Row="6" Content="Верхний регистр"/>
+                    <CheckBox Grid.Row="8" Content="Нижний регистр"/>
+                    <CheckBox Grid.Row="10" Content="Слова"/>
+                    <StackPanel Grid.Row="12" Orientation="Horizontal">
+                        <TextBlock Text="Количество паролей"/>
+                        <Separator Height="0" Width="10"/>
+                        <TextBox Width="30"/>
+                    </StackPanel>
+
                 </Grid>
 
                 <Grid Grid.Column="2" ShowGridLines="True">
