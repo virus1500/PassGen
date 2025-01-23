@@ -51,7 +51,7 @@
                         <Separator Width="10" Height="0"/>
                         <Slider Minimum="3" Maximum="32" Width="100" />
                         <Separator Width="10" Height="0"/>
-                        <TextBox Width="30"/>
+                        <TextBox Width="30" Name="PasswordLengthTb"/>
                     </StackPanel>
 
                     <CheckBox Grid.Row="2" Content="Цифры"/>
@@ -77,7 +77,7 @@
                     </Grid.RowDefinitions>
                     <Image Source="O:\GogolevValeriy\EntryLessons\PassGen\PassGen\Resources\Images\question.png"/>
                     <TextBlock Grid.Row="2" Text="Надёжный"/>
-                    <Button Grid.Row="4" Content="Генерация" Width="120" Height="25"/>
+                    <Button Name="GenerateBtn" Click="GenerateBtn_Click" Grid.Row="4" Content="Генерация" Width="120" Height="25"/>
                 </Grid>
 
 
@@ -88,7 +88,7 @@
         <!--#endregion-->
 
         <!--#region Список паролей -->
-        <ListBox Grid.Row="2">
+        <ListBox Name="PasswordsLb" Grid.Row="2">
             
         </ListBox>
         <!--#endregion-->
