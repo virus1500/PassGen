@@ -49,9 +49,9 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Длина пароля"/>
                         <Separator Width="10" Height="0"/>
-                        <Slider Minimum="3" Maximum="32" Width="100" />
+                        <Slider Name="PasswordLengthSl" Minimum="3" Maximum="32" Width="100" />
                         <Separator Width="10" Height="0"/>
-                        <TextBox Width="30" Name="PasswordLengthTb"/>
+                        <TextBox Text="{Binding ElementName=PasswordLengthSl, Path=Value, StringFormat={}{0:F0}}" Width="30" Name="PasswordLengthTb"/>
                     </StackPanel>
 
                     <CheckBox Name="NumbersCb" Grid.Row="2" Content="Цифры"/>
