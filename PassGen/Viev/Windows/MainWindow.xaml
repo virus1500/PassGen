@@ -76,7 +76,7 @@
                         <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
                     <Image Source="O:\GogolevValeriy\EntryLessons\PassGen\PassGen\Resources\Images\question.png"/>
-                    <TextBlock Grid.Row="2" Text="Надёжный"/>
+                    <TextBlock x:Name="Rliability" Grid.Row="2" Text="Надёжный"/>
                     <Button Name="GenerateBtn" Click="GenerateBtn_Click" Grid.Row="4" Content="Генерация" Width="120" Height="25"/>
                 </Grid>
 

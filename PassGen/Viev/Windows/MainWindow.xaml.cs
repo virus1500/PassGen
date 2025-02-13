@@ -23,7 +23,11 @@ namespace PassGen.Viev.Windows
             int passwordCount = int.Parse(PasswordsCountTb.Text);
 
             PasswordsLb.ItemsSource = _generationService.Start(length, passwordCount);
+
+            Rliability.Text = _generationService.rel;
         }
+
+
 
         private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
