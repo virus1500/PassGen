@@ -10,27 +10,46 @@ namespace PassGen.AppData
         private readonly string _symbols = "!@#$%^&*()_-=";
         private readonly string _loverCharacters = "qwertyuiopasdfghjklzxcvbnm";
         private readonly string _upperCharacters = "QWERTYUIOPASDFGHJKLZXCVBNM";
+        private readonly List<string> _patterns;
 
+        public GenerationService(bool useNumbers, bool useSymbols, bool useLower, bool useUpper, bool useWords)
+        {
+            _patterns = new List<string>();
 
-        public List<string> Start(int length)
+            if (useNumbers) _patterns.Add(_numbers);
+            if (useSymbols) _patterns.Add(_symbols);
+            if (useLower) _patterns.Add(_loverCharacters);
+            if (useUpper) _patterns.Add(_upperCharacters);
+
+        }
+
+        public List<string> Start(int length, int passwordsCount)
         {
 
 
-            string[] patterns = new string[] { _numbers, _symbols, _loverCharacters, _upperCharacters };
-            string password = string.Empty;
+
             var passwordSets = new List<string>();
 
-            while (password.Length < length)
+            for (int i = 0; i < passwordsCount; i++)
             {
-                int patternIndex = _random.Next(0, patterns.Length);
-                int charIndexFromPattern = _random.Next(0, patterns[patternIndex].Length);
+                string password = string.Empty;
 
-                password += patterns[patternIndex][charIndexFromPattern];
+                while (password.Length < length)
+                {
+                    int patternIndex = _random.Next(0, _patterns.Count);
+                    int charIndexFromPattern = _random.Next(0, _patterns[patternIndex].Length);
+
+                    password += _patterns[patternIndex][charIndexFromPattern];
+                }
+                passwordSets.Add(password);
+
             }
 
             return passwordSets;
 
         }
+
+
     }
 }
 

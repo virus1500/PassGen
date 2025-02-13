@@ -13,13 +13,21 @@ namespace PassGen.Viev.Windows
         {
             InitializeComponent();
 
-            _generationService = new GenerationService();
+
         }
 
         private void GenerateBtn_Click(object sender, RoutedEventArgs e)
         {
+            _generationService = new GenerationService(NumbersCb.IsChecked.Value, SymbolsCb.IsChecked.Value, LowerCaseCb.IsChecked.Value, UpperCaseCb.IsChecked.Value, WordsCb.IsChecked.Value);
             int length = int.Parse(PasswordLengthTb.Text);
-            PasswordsLb.ItemsSource = _generationService.Start(length);
+            int passwordCount = int.Parse(PasswordsCountTb.Text);
+
+            PasswordsLb.ItemsSource = _generationService.Start(length, passwordCount);
+        }
+
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
         }
     }
 }

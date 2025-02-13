@@ -54,15 +54,15 @@
                         <TextBox Width="30" Name="PasswordLengthTb"/>
                     </StackPanel>
 
-                    <CheckBox Grid.Row="2" Content="Цифры"/>
-                    <CheckBox Grid.Row="4" Content="Символы"/>
-                    <CheckBox Grid.Row="6" Content="Верхний регистр"/>
-                    <CheckBox Grid.Row="8" Content="Нижний регистр"/>
-                    <CheckBox Grid.Row="10" Content="Слова"/>
+                    <CheckBox Name="NumbersCb" Grid.Row="2" Content="Цифры"/>
+                    <CheckBox Name="SymbolsCb" Grid.Row="4" Content="Символы"/>
+                    <CheckBox Name="UpperCaseCb" Grid.Row="6" Content="Верхний регистр"/>
+                    <CheckBox Name="LowerCaseCb" Grid.Row="8" Content="Нижний регистр"/>
+                    <CheckBox Name="WordsCb" Grid.Row="10" Content="Слова"/>
                     <StackPanel Grid.Row="12" Orientation="Horizontal">
                         <TextBlock Text="Количество паролей"/>
                         <Separator Height="0" Width="10"/>
-                        <TextBox Width="30"/>
+                        <TextBox Name="PasswordsCountTb" Width="30" TextChanged="TextBox_TextChanged"/>
                     </StackPanel>
 
                 </Grid>
